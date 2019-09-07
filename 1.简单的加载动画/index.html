@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+
+    .loading{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .loading-icon{
+        height: 50px;
+        width: 50px;
+        background: lightblue;
+        border: 5px solid gray;
+        border-left: 5px solid pink;
+        animation: loading 0.5s linear infinite;
+        border-radius: 50%;
+    }
+    @keyframes loading {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+
+    }
+</style>
+<!--不处理兼容性问题，只为演示-->
+<div class="loading">
+    <div class="loading-icon"></div>
+</div>
+
+
+</body>
+</html>
