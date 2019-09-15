@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任意位置添加点赞爱心浮动消失特效</title>
+    <link href="https://cdn.bootcss.com/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .middle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wrap {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+    }
+
+    .content-wrap {
+        height: 80%;
+        background-color: #000;
+        color: #fff;
+    }
+
+    .like-wrap {
+        height: 20%;
+        font-size: 20px;
+        color: #cccccc;
+    }
+
+    .like-active {
+        color: red;
+    }
+
+    .like {
+        position: absolute;
+        color: #ccc;
+        font-size: 20px;
+    }
+</style>
+<body class="middle">
+
+<div class="wrap">
+    <div class="content-wrap middle">
+        <p>i am content</p>
+    </div>
+    <div class="like-wrap middle">
+        <i class="fas fa-heart"></i>
+        <span>like</span>
+    </div>
+</div>
+<script>
+
+
+    (function (w, d) {
+        /*d.querySelector("body").addEventListener('click', function (e) {
+            addLike(e)
+        });*/
+        d.querySelector(".like-wrap").addEventListener('click', function (e) {
+            this.classList.toggle('like-active')
+            addLike(e)
+        });
+        var likeArr = []
+
+        function addLike(e) {
+            var likeDiv = d.createElement('div')
+            likeDiv.classList.add('like');
+            likeDiv.innerHTML = " <i class=\"fas fa-heart\"></i>"
+            d.body.appendChild(likeDiv)
+            likeArr.push({
+                el: likeDiv,
+                top: e.clientY - 20,
+                left: e.clientX - 10,
+                opacity: 1,
+                scale: 1,
+                color: `rgb(${255 * Math.random()},${255 * Math.random()},${255 * Math.random()})`
+            });
+            moveLike()
+        }
+
+        function moveLike() {
+            for (var i = 0; i < likeArr.length; i++) {
+                if(likeArr[i].opacity<=0){
+                    d.body.removeChild(likeArr[i].el)
+                    likeArr.splice(i,1);
+                    return
+                }
+                likeArr[i].top--;
+                likeArr[i].opacity -= 0.01
+                likeArr[i].scale += 0.01
+                likeArr[i].el.style.cssText = `
+                    top:${likeArr[i].top}px;
+                    left:${likeArr[i].left}px;
+                    color:${likeArr[i].color};
+                    opacity:${likeArr[i].opacity};
+                    transform:scale(${likeArr[i].scale});`
+            }
+            w.requestAnimationFrame(moveLike)
+        }
+    })(window, document)
+
+
+</script>
+
+</body>
+</html>
