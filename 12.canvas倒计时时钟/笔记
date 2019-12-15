@@ -1,0 +1,45 @@
+canvas的绘制是基于状态的，
+1.  canvas 提供的api
+       canvas.height
+       canvas.width
+       canvas.getContext("2d")
+
+2.draw
+    context.moveTo(x,y)
+    context.lineTo(x,y)
+    context.beginPath()
+    context.closePath()
+
+    context.lineWidth
+    context.strokeStyle
+    context.fillStyle
+
+    context.stroke()
+    context.fill()
+
+        先设置状态，最后再绘制
+            context.moveTo(100,100)
+            context.lineTo(500,500)
+            context.lineWidth = 5
+            context.strokeStyle= "red"
+            context.stroke()
+        绘制多边形  最后 都要lineTo到起点位置
+            context.moveTo(100,100)
+            context.lineTo(200,200)
+            context.lineTo(300,300)
+            context.lineTo(100,100)
+            context.fillStyle='red'
+            context.fill()
+
+        绘制多个分开的图形
+            context.beginPath()
+            xxx
+            context.closePath()
+
+3.draw an arc
+    圆心的坐标，半径，起始弧度弧度，结束弧度，默认顺时针绘制
+    context.arc(centerX,centerY,radius,startingAngle,endingAngle,anticlockwise = false)
+
+    一个圆的弧度   0π，0.5π 1π，1.5π，2π,无论是顺时针还是逆时针 ，弧度的位置是固定的
+    如果使用closePath  会自动将不封闭的路径给封闭，
+
