@@ -26,3 +26,21 @@
         e, f 水平垂直位移
         transform(a,b,c,d,e,f) 产生的变换是级联的
         setTransform(a,b,c,d,e,f) 不会产生级联
+4.填充样式
+    fillStyle
+        颜色
+        渐变
+            线性渐变
+                var grd=context.createLinearGradient(xStart,yStart,xend,yend)两个坐标构成一个线段
+                grd.addColorStop(stop,color) stop浮点值，定义关键色的位置,stop取值从0 到1
+                context.fillStyle(grd)
+            径向渐变
+                var grd = context.createRadialGradient(x0,y0,r0,x1,y1,r1)
+        图片
+            createPattern(img,repeat-style)
+        canvas
+            createPattern(canvas,repeat-style)
+         video
+            createPattern(video,repeat-style)
+5.曲线的绘制
+    
