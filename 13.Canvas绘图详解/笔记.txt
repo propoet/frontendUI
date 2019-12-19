@@ -1,0 +1,28 @@
+1.ctx.rect(x,y,width,height) 绘制矩形
+    ctx.fillRect(x,y,width,height)
+    ctx.strokeRect(x,y,width,height)
+2.线条的属性  第三章
+    lineWidth
+    lineCap 只能用于线段的开始和结束处，不能用于转折处
+        butt(default)
+        round 突出圆形一段
+        square 突出方形一段
+    lineJoin 线条相交形态
+        miter（default）  miterLimit默认10 使用miter线条相交，内角和外角之间距离的最大值
+        bevel 斜接
+        round 圆角
+3.星空和图形的变换
+    图形变换：
+        translate()位移
+        rotate() 旋转
+        scale()缩放
+    cxt.save() cxt.restore()  canvas状态的保存和恢复
+    设置变换矩阵
+        a c e
+        b d f
+        0 0 1
+        a, d 水平垂直缩放
+        b, c 水平垂直倾斜
+        e, f 水平垂直位移
+        transform(a,b,c,d,e,f) 产生的变换是级联的
+        setTransform(a,b,c,d,e,f) 不会产生级联
