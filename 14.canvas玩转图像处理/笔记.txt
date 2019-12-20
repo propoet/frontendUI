@@ -1,3 +1,23 @@
 1.canvas 图像基础
     drawImage(image,dx,dy)
+    drawImage(image,dx,dy，dw,dh)
     drawImage(image,sx,sy,swidth,sheight,dx,dy,dwidth,dheight)
+2.离屏canvas
+     drawImage(canvas,dx,dy)
+     drawImage(canvas,dx,dy，dw,dh)
+     drawImage(canvas,sx,sy,swidth,sheight,dx,dy,dwidth,dheight)
+
+     应用 给canvas加水印，放大镜
+
+     canvas 和鼠标交互
+        canvas.onmousedown=function(event){
+
+        }
+3.像素级别处理
+    imageData = context.getImageData(x,y,w,h)
+        width
+        height
+        data:区域图像中像素信息
+    context.putImageData(imageData,dx,dy,dirtyX,dirty,dirtyW,dirtyH);
+    canvas 滤镜
+4.createImageData(w,h)
