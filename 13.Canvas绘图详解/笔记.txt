@@ -1,4 +1,4 @@
-1.ctx.rect(x,y,width,height) 绘制矩形
+1.ctx.rect(x,y,width,height) 绘制矩形  ctx.ellipse()绘制椭圆
     ctx.fillRect(x,y,width,height)
     ctx.strokeRect(x,y,width,height)
 2.线条的属性  第三章
@@ -68,13 +68,38 @@
         context.textAlign = left center right 基线是初始化给的坐标
         context.textBaseLine = top middle bottom   alphabetic(normal,基于拉丁字母) ideographic（汉字） hanging（印度语）
     文本的度量
-        context.measureText(String).width
+        context.measureText(String).width 获取文本宽度
+7.canvas 高级
+    阴影
+        context.shadowColor
+        context.shadowOffsetX
+        context.shadowOffsetY
+        context.shadowBlur
+    global
+        globalAlpha 全局透明度
+        globalCompositeOperation 绘制的图像在重叠的时候 所产生的的效果
+            source-cover 后覆盖前
+            destination-over 前覆盖后
+    剪辑区域
+        context.clip()
+    路径方向和剪纸效果 非零环绕原则，
 
+    使用canvas交互和isPointlnPath
+        context.clearRect(x,y,width,height)
+        context.isPointLnPath(x,y)
+8.
+    在canvas上使用其他html元素
+        html元素放在canvas之后
 
+    扩展context
+        CanvasRenderingContext2D.prototype.fillStar=function(){}
 
+    兼容性
+        ie6 7 8   explorecanvas
+    canvas图形库
+        canvasplus
+        artisan js
+        Rgraph
 
-
-
-
-
+    使用canvas处理图像
 
