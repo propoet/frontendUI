@@ -53,3 +53,28 @@
             context.moveTo(x0,y0)
             context.bezierCurveTo(x1,y1,x2,y2,x3,y3) 有两个控制点
 6.文字的渲染
+    基础
+        context.font = "bold 40px"
+        context.fillStyle=pattern
+        context.fillText(string,x,y,[maxlength])
+        cotext.strokeText(string,x,y,[maxlength])
+    字型 字号和字体 默认值20px sans-serif
+        font-style:normal italic斜体字  oblique倾斜字体
+        font-variant：normal  small-caps小型的大写字母
+        font-weight：lighter normal bold bolder
+        font-size
+        font-family设置多种字体备选，支持@font-face web安全字体
+    文本对齐
+        context.textAlign = left center right 基线是初始化给的坐标
+        context.textBaseLine = top middle bottom   alphabetic(normal,基于拉丁字母) ideographic（汉字） hanging（印度语）
+    文本的度量
+        context.measureText(String).width
+
+
+
+
+
+
+
+
+
